@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-primario: #000000;
+    --color-secundario: #F6F6F6;
+    --color-terciario: #22D4FD; 
+    --color-hover: #272727;
+
+    --fuente-montserrat: "Montserrat", sans-serif;
+    --fuente-krona: "Krona One", sans-serif;
+}
+
+/* Reset */
+* {
+    padding: 0;
+    margin:0;
+}
+
+/* Estilos de TODO el body en general.
+Todo dentro del body va a respetar estos colores y tamaños
+A menos que especifiquemos lo contrario cambiando el color con la CLASS*/
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
+
+.header{
+    padding: 2% 0% 0% 15%
+}
+
+.header__menu{
+    display:flex;
+    gap: 80px;
+}
+
+
+.header__menu__link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+
+.presentacion{ /* Class para designar el FLEXBOX al main*/
+    display: flex; /* Alinea los elementos en una línea recta*/
+    align-items: center; /* Trae esa línea al centro*/
+    padding: 6% 15%; /* Separa el contenido de los bordes */
+    justify-content: space-between; /* Separa los elementos entre sí */
+    gap: 82px;
+}
+
+/* Utilizamos siempre CLASS en la sección del contenido para poder establecer
+ el tamaño individual de cada cosa como nos lo indicaron en el Figma. */
+.presentacion__contenido{ /*Separamos el texto de la foto para designar el tamaño*/
+    width: 50%; /* Siempre ocupa 50% de la pantalla. */
+    display: flex;
+    flex-direction: column; /* Alinea el flex en columna, no en linea*/
+    gap: 40px; /* Separa los elementos entre sí*/
+}
+
+.presentacion__contenido__titulo{ /*Separamos titulo y texto para designar distintas fuentes y tamaños.*/
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+}
+
+/* Estilos de cada class que designamos en el html*/
+.titulo-destaque{
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+}
+
+
+.presentacion__contenido__texto a{ /* Modifica dentro de la CLASS lo que sea <a></a>*/
+    text-decoration: none;
+    color:var(--color-terciario);
+}
+
+
+/* Esta class nos ayudará a acomodar el FLEXBOX de la DIV*/
+.presentacion__contenido__enlaces{
+    display: flex; /* Cuando queremos justificar o acomodar el contenido de un grupo, siempre hay que poner esto*/
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400; /*REGULAR*/
+}
+
+/* Esta class nos ayudará a acomodar los botones y fuentes de CADA ancla
+En este caso hacemos uno solo y lo repetimos en ambas anclas en el HTML
+porque los botones son del mismo color, tamaño y fuente.*/
+.presentacion__enlaces__link{
+    width: 50%; /* Siempre ocupa 50% de su sección. */
+    text-align: center;
+    padding: 16px 0;
+    border-radius: 8px; /* Redondeado de borde. */
+    border: 2px solid var(--color-terciario);
+
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600; /* 600 es semibold */
+    text-decoration: none; /* Le saca el subrayado de link*/
+    color: var(--color-secundario);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.presentacion__enlaces__link:hover{ /*Hace que el botón cambie cuando pasamos el ratón encima*/
+    background-color: var(--color-hover);
+    cursor: pointer;
+}
+
+.presentacion__img{
+    width: 50%; /* Siempre ocupa 50% de la pantalla. */
+}
+
+.footer{
+    background-color: var(--color-terciario);
+    padding: 26.64px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400; /* 400 es regular */
+}
+
+@media (max-width: 1200px){
+    .header{
+        padding: 10%
+    }
+    .header__menu{
+        justify-content: center;
+    }
+
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .presentacion__contenido{
+        width: auto;
+    }
+}
